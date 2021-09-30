@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+$leftBgColor: rgba($color: #5754ec, $alpha: 0.7);
+$rightBgColor: rgba($color: #2b2b2b, $alpha: 0.8);
+
+$leftBtnHoverColor: rgba($color: #5754ec, $alpha: 0.7);
+$rightBtnHoverColor: rgba($color: #0f7c10, $alpha: 0.7);
+
+$hoverWidth: 75%;
+$otherWidth: 25%;
+
+body {
+  font-family: 'roboto', sans-serif;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+h1 {
+  font-size: 4rem;
+  color: #fff;
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.btn {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 50%;
+  top: 40%;
+  transform: translateX(-50%);
+  text-decoration: none;
+  color: #fff;
+  border: 0.2rem #fff solid;
+  width: 15rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 1.5rem;
+
+
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #333;
+}
+
+.split {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+
+  &.left {
+    left: 0;
+    background: url('/img/playstaion5Bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .btn:hover {
+      background-color: $leftBtnHoverColor;
+      border: $leftBtnHoverColor;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: $leftBgColor;
+    }
+  }
+
+  &.right {
+    right: 0;
+    background: url('/img/xbox.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .btn:hover {
+      background-color: $rightBtnHoverColor;
+      border: $rightBtnHoverColor;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: $rightBgColor;
+    }
+  }
+}
+
+.hover-left {
+
+  .left {
+    width: $hoverWidth;
+  }
+
+  .right {
+    width: $otherWidth;
+  }
+}
+
+.hover-right {
+
+  .left {
+    width: $otherWidth;
+  }
+
+  .right {
+    width: $hoverWidth;
+  }
+}
+
