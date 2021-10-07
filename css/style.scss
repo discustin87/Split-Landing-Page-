@@ -13,6 +13,8 @@ $rightBtnHoverColor: rgba($color: #0f7c10, $alpha: 0.7);
 $hoverWidth: 75%;
 $otherWidth: 25%;
 
+$speed: 1000ms;
+
 body {
   font-family: 'roboto', sans-serif;
   height: 100vh;
@@ -104,6 +106,10 @@ h1 {
   }
 }
 
+.split.right, .split.left, .split.right::before, .split.left::before {
+  transition: all $speed ease-in-out;
+}
+
 .hover-left {
 
   .left {
@@ -123,6 +129,18 @@ h1 {
 
   .right {
     width: $hoverWidth;
+  }
+}
+
+@media (max-width: 800px) {
+  h1 {
+    font-size: 2rem;
+    top: 30%;
+  }
+
+  .btn {
+    padding: 1.2rem;
+    width: 12rem;
   }
 }
 
